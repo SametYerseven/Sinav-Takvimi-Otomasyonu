@@ -1,7 +1,8 @@
 USE SinavTakvimiOtomasyonuDB;
 GO
 
-CREATE VIEW GenelSinavProgrami
+-- 1.VIEW Burada genel bir sıan programı oluşturuyoruz
+CREATE OR ALTER VIEW GenelSinavProgrami
 AS
 SELECT 
 	s.Tarih,
@@ -23,11 +24,38 @@ LEFT JOIN Gozetmen_Atamalari ga ON ss.AtamaID = ga.AtamaID
 LEFT JOIN Personel p ON ga.PersonelID = p.PersonelID;
 GO
 
+-- 2.VIEW Gozetmen gorev yuku dağılımını gösteriyoruz herkese adil mi dağıtılmış bakabiliyoruz
+CREATE OR ALTER VIEW GozetmenGorevYuku
+AS
+SELECT
+ p.Unvan + ' ' + p.Ad + ' ' + p.Soyad AS PersonelAdi,
+ b.BolumAd,
+ COUNT(ga.GozetmenAtamaID) AS ToplamGorevSayisi
 
-INSERT INTO Sinavlar (DersID, Tarih, OturumID) VALUES (1, '2026-05-20', 1);
+FROM Personel p
+INNER JOIN Bolumler b ON p.BolumID = b.BolumID
+LEFT JOIN Gozetmen_Atamalari ga ON p.PersonelID = ga.PersonelID
+GROUP BY
+	p.PersonelID, 
+    p.Unvan, 
+    p.Ad, 
+    p.Soyad, 
+    b.BolumAd;
+GO
 
-INSERT INTO Sinav_Salonlari (SinavID, DerslikID) VALUES (1, 1); 
-INSERT INTO Sinav_Salonlari (SinavID, DerslikID) VALUES (1, 2); 
 
-INSERT INTO Gozetmen_Atamalari (AtamaID, PersonelID) VALUES (1, 1); 
-INSERT INTO Gozetmen_Atamalari (AtamaID, PersonelID) VALUES (2, 2);
+--3.VIEW Sınav için planlanmayan dışarıda kalan dersleri gösteriyo
+
+CREATE OR ALTER VIEW PlanlanmayanDersler
+AS
+SELECT 
+    d.DersKodu,
+    d.Ad AS DersAdi,
+    d.OgrenciSayisi,
+    d.Yariyil,
+    b.BolumAd
+FROM Dersler d
+INNER JOIN Bolumler b ON d.BolumID = b.BolumID
+LEFT JOIN Sinavlar s ON d.DersID = s.DersID
+WHERE s.SinavID IS NULL;
+GO
