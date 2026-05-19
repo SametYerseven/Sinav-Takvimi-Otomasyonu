@@ -28,3 +28,12 @@ INSERT INTO Personel (Unvan, Ad, Soyad, BolumID) VALUES
 
 INSERT INTO Dersler (DersKodu, DersTuru, Ad, OgrenciSayisi, Yariyil, BolumID) VALUES
 ('YZM2126', 'Zorunlu', 'Veritabanı Sistemlerine Giriş', 132, 4, 1);
+
+
+INSERT INTO Sinavlar (DersID, Tarih, OturumID) VALUES (1, '2026-05-20', 1);
+
+INSERT INTO Sinav_Salonlari (SinavID, DerslikID) VALUES (1, 1); 
+INSERT INTO Sinav_Salonlari (SinavID, DerslikID) VALUES (1, 2); 
+
+INSERT INTO Gozetmen_Atamalari (AtamaID, PersonelID) VALUES (1, 1); 
+INSERT INTO Gozetmen_Atamalari (AtamaID, PersonelID) VALUES (2, 2);
