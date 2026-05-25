@@ -1,3 +1,13 @@
+-- burada ki işlem githubda projeyi indirip kuran grup arkadaşlarım için otomatik olarak aynı isimde 
+--veri tabanı oluşturmayı sağlar
+
+IF NOT EXISTS (SELECT * FROM sys.databases WHERE name = 'SinavTakvimiOtomasyonuDB')
+BEGIN
+    CREATE DATABASE SinavTakvimiOtomasyonuDB;
+END
+GO
+
+
 USE SinavTakvimiOtomasyonuDB;
 GO
 
