@@ -1,0 +1,18 @@
+# SQL Server Veritabanı ve Yedekleme Dosyaları
+*.mdf
+*.ldf
+*.bak
+*.bak.*
+
+# İşletim Sistemi Önbellek Dosyaları
+Thumbs.db
+.DS_Store
+
+# Olası Geliştirme Ortamı ve Derleme Çıktıları (C#, Python vb. için hazırlık)
+bin/
+obj/
+.vs/
+__pycache__/
+*.suo
+*.user
+node_modules/
