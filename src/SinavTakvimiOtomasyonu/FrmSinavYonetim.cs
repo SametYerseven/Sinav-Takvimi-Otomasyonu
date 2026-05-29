@@ -99,9 +99,17 @@ namespace SinavTakvimiOtomasyonu
                 cmd.Parameters.AddWithValue("@p_Tarih", dtpTarih.Value.Date);
                 cmd.Parameters.AddWithValue("@p_OturumID", Convert.ToInt32(cmbOturumlar.SelectedValue));
 
-                cmd.ExecuteNonQuery();
+                
 
-                MessageBox.Show("Sınav oluşturuldu ve salonlar atandı.");
+                try
+                {
+                    cmd.ExecuteNonQuery();
+                    MessageBox.Show("Sınav oluşturuldu ve salonlar atandı.");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Sınav oluşturulamadı: " + ex.Message);
+                }
             }
 
             SalonlariListele();
@@ -152,29 +160,6 @@ namespace SinavTakvimiOtomasyonu
            
         }
 
-        private void PersonelleriYukle()
-        {
-            using (SqlConnection conn = DbHelper.GetConnection())
-            {
-                conn.Open();
-
-                string query = @"
-        SELECT 
-            PersonelID,
-            Ad + ' ' + Soyad AS AdSoyad
-        FROM Personel";
-
-                SqlDataAdapter da = new SqlDataAdapter(query, conn);
-
-                DataTable dt = new DataTable();
-
-                da.Fill(dt);
-
-                cmbPersoneller.DataSource = dt;
-                cmbPersoneller.DisplayMember = "AdSoyad";
-                cmbPersoneller.ValueMember = "PersonelID";
-            }
-        }
     
 
         private void btnGozetmenAta_Click(object sender, EventArgs e)
@@ -201,9 +186,20 @@ namespace SinavTakvimiOtomasyonu
                 cmd.Parameters.AddWithValue("@p_AtamaID", atamaID);
                 cmd.Parameters.AddWithValue("@p_PersonelID", personelID);
 
-                cmd.ExecuteNonQuery();
+                
 
-                MessageBox.Show("Gözetmen atandı.");
+                try
+                {
+                    cmd.ExecuteNonQuery();
+                    MessageBox.Show("Gözetmen atandı.");
+
+                    SalonlariListele();
+                    cmbPersoneller.DataSource = null;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Gözetmen atanamadı: " + ex.Message);
+                }
 
                 SalonlariListele();
 
@@ -287,6 +283,11 @@ namespace SinavTakvimiOtomasyonu
 
         }
 
-        
+        private void btnRaporlar_Click(object sender, EventArgs e)
+        {
+            FrmRaporlar frm = new FrmRaporlar();
+            frm.Show();
+            this.Hide();
+        }
     }
 }

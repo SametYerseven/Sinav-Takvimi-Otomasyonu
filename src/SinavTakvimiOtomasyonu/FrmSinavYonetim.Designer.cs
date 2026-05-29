@@ -43,6 +43,7 @@
             this.btnIptalPaneli = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
+            this.btnRaporlar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSalonlar)).BeginInit();
             this.SuspendLayout();
             // 
@@ -109,7 +110,7 @@
             this.btnYukle.ForeColor = System.Drawing.Color.White;
             this.btnYukle.Location = new System.Drawing.Point(504, 112);
             this.btnYukle.Name = "btnYukle";
-            this.btnYukle.Size = new System.Drawing.Size(140, 35);
+            this.btnYukle.Size = new System.Drawing.Size(157, 35);
             this.btnYukle.TabIndex = 5;
             this.btnYukle.Text = "Verileri Yükle";
             this.btnYukle.UseVisualStyleBackColor = false;
@@ -124,7 +125,7 @@
             this.btnSinavOlustur.ForeColor = System.Drawing.Color.White;
             this.btnSinavOlustur.Location = new System.Drawing.Point(504, 162);
             this.btnSinavOlustur.Name = "btnSinavOlustur";
-            this.btnSinavOlustur.Size = new System.Drawing.Size(140, 35);
+            this.btnSinavOlustur.Size = new System.Drawing.Size(157, 35);
             this.btnSinavOlustur.TabIndex = 6;
             this.btnSinavOlustur.Text = "Sınav Oluştur";
             this.btnSinavOlustur.UseVisualStyleBackColor = false;
@@ -157,7 +158,7 @@
             this.btnGozetmenAta.ForeColor = System.Drawing.Color.White;
             this.btnGozetmenAta.Location = new System.Drawing.Point(504, 607);
             this.btnGozetmenAta.Name = "btnGozetmenAta";
-            this.btnGozetmenAta.Size = new System.Drawing.Size(140, 35);
+            this.btnGozetmenAta.Size = new System.Drawing.Size(157, 35);
             this.btnGozetmenAta.TabIndex = 9;
             this.btnGozetmenAta.Text = "Gözetmen Ata";
             this.btnGozetmenAta.UseVisualStyleBackColor = false;
@@ -218,11 +219,27 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label2.Location = new System.Drawing.Point(413, 32);
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(445, 26);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(339, 32);
             this.label2.TabIndex = 15;
             this.label2.Text = "SINAV YÖNETİM PANELİ";
+            // 
+            // btnRaporlar
+            // 
+            this.btnRaporlar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.btnRaporlar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.btnRaporlar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRaporlar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnRaporlar.ForeColor = System.Drawing.Color.White;
+            this.btnRaporlar.Location = new System.Drawing.Point(1030, 352);
+            this.btnRaporlar.Name = "btnRaporlar";
+            this.btnRaporlar.Size = new System.Drawing.Size(186, 55);
+            this.btnRaporlar.TabIndex = 16;
+            this.btnRaporlar.Text = "Raporlar";
+            this.btnRaporlar.UseVisualStyleBackColor = false;
+            this.btnRaporlar.Click += new System.EventHandler(this.btnRaporlar_Click);
             // 
             // FrmSinavYonetim
             // 
@@ -230,6 +247,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
             this.ClientSize = new System.Drawing.Size(1240, 697);
+            this.Controls.Add(this.btnRaporlar);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btnIptalPaneli);
@@ -270,6 +288,7 @@
         private System.Windows.Forms.Button btnIptalPaneli;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button btnRaporlar;
     }
 }
 

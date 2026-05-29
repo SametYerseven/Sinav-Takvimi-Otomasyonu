@@ -47,18 +47,23 @@
             // 
             // btnTakvimiYukle
             // 
+            this.btnTakvimiYukle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.btnTakvimiYukle.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.btnTakvimiYukle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTakvimiYukle.ForeColor = System.Drawing.Color.White;
             this.btnTakvimiYukle.Location = new System.Drawing.Point(46, 465);
             this.btnTakvimiYukle.Name = "btnTakvimiYukle";
             this.btnTakvimiYukle.Size = new System.Drawing.Size(178, 36);
             this.btnTakvimiYukle.TabIndex = 1;
             this.btnTakvimiYukle.Text = "Takvimi Yükle";
-            this.btnTakvimiYukle.UseVisualStyleBackColor = true;
+            this.btnTakvimiYukle.UseVisualStyleBackColor = false;
             this.btnTakvimiYukle.Click += new System.EventHandler(this.btnTakvimiYukle_Click);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(506, 24);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(216, 32);
@@ -67,19 +72,24 @@
             // 
             // btnGeri
             // 
+            this.btnGeri.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.btnGeri.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.btnGeri.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGeri.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnGeri.ForeColor = System.Drawing.Color.White;
             this.btnGeri.Location = new System.Drawing.Point(1030, 619);
             this.btnGeri.Name = "btnGeri";
             this.btnGeri.Size = new System.Drawing.Size(186, 55);
             this.btnGeri.TabIndex = 3;
             this.btnGeri.Text = "Geri";
-            this.btnGeri.UseVisualStyleBackColor = true;
+            this.btnGeri.UseVisualStyleBackColor = false;
             this.btnGeri.Click += new System.EventHandler(this.btnGeri_Click);
             // 
             // FrmTakvim
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
             this.ClientSize = new System.Drawing.Size(1240, 697);
             this.Controls.Add(this.btnGeri);
             this.Controls.Add(this.label1);
