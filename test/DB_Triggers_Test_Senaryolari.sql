@@ -12,7 +12,9 @@ GO
 -- ----------------------------------------------------------
 -- Senaryo: Bugünün tarihinden eski bir güne (Örn: 2020 yılına) sınav eklemeye çalışalım.
 -- Beklenen: Trigger uyanmalı, kırmızı hata vermeli ve sınavın eklenmesini engellemeli!
+
 PRINT '--- TEST 1 BAŞLIYOR ---';
+
 BEGIN TRY
     INSERT INTO Sinavlar (DersID, Tarih, OturumID) 
     VALUES (1, '2020-01-01', 1);
@@ -22,7 +24,6 @@ BEGIN CATCH
     PRINT 'Hata Mesajı: ' + ERROR_MESSAGE();
 END CATCH;
 GO
-
 
 -- ----------------------------------------------------------
 -- TEST 2: SİLİNME LOG TRIGGER'I (Başarı Bekleniyor)
