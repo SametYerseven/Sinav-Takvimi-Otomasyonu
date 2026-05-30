@@ -178,7 +178,6 @@
             this.grpToplam.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvGorevler)).EndInit();
             this.ResumeLayout(false);
-
         }
 
         #endregion

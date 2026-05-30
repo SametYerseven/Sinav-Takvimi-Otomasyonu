@@ -1,4 +1,4 @@
-USE SinavTakvimiOtomasyonuDB
+USE SinavTakvimiOtomasyonuDB;
 GO
 
 CREATE TABLE Personel(
@@ -11,6 +11,7 @@ CREATE TABLE Personel(
 	CONSTRAINT Personel_Bolumler FOREIGN KEY (BolumID)
 	REFERENCES Bolumler(BolumID)
 );
+GO
 
 CREATE TABLE Dersler (
 	DersID INT IDENTITY(1,1) PRIMARY KEY,
@@ -19,11 +20,12 @@ CREATE TABLE Dersler (
 	Ad NVARCHAR(100) NOT NULL,
 	OgrenciSayisi INT NOT NULL,
 	Yariyil INT NOT NULL,
-	BolumID INT NOT NULL
+	BolumID INT NOT NULL,
 
 	CONSTRAINT Dersler_Bolumler FOREIGN KEY (BolumID)
 	REFERENCES Bolumler(BolumID)
 );
+GO
 
 -- SİSTEM GİRİŞİ İÇİN KULLANICILAR TABLOSU
 CREATE TABLE Kullanicilar (
@@ -40,7 +42,6 @@ CREATE TABLE Kullanicilar (
 GO
 
 -- TEST VERİLERİ (Arayüzde giriş yapmak için 2 adet hesap)
-
 INSERT INTO Kullanicilar (PersonelID, KullaniciAdi, Sifre, Rol)
 VALUES (1, 'admin', 'admin123', 'Yonetici');
 

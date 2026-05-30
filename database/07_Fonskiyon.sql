@@ -2,7 +2,6 @@ USE SinavTakvimiOtomasyonuDB;
 GO
 
 -- 1.Fonskiyon: sınav saatinin süresini otomatik olarak dakikaya çeviren fonkisyon
-
 CREATE OR ALTER FUNCTION OturumSuresDakika(@p_OturumID INT)
 RETURNS INT
 AS
@@ -18,7 +17,6 @@ END;
 GO
 
 -- 2.Fonskiyon: Gözetmenlerin sınav başına aldıkları ek ücreti hesaplama fonskiyonu
-
 CREATE OR ALTER FUNCTION GozetmenUcretiHesapla(@p_PersonelID INT)
 RETURNS DECIMAL(10,2)
 AS
@@ -37,19 +35,11 @@ BEGIN
 END;
 GO
 
-USE SinavTakvimiOtomasyonuDB;
-GO
-
-
-
-
 -- UDF 3: DERSLİK MÜSAİTLİK DURUMU KONTROLÜ
-
 CREATE OR ALTER FUNCTION dbo.fn_DerslikMusaitlik(
     @p_DerslikID INT,
     @p_Tarih DATE,
-    @p_OturumID INT
-)
+    @p_OturumID INT)
 RETURNS NVARCHAR(20)
 AS
 BEGIN

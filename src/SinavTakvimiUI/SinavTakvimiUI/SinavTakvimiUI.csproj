@@ -46,11 +46,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FrmTanimlamalar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmTanimlamalar.Designer.cs">
+      <DependentUpon>FrmTanimlamalar.cs</DependentUpon>
+    </Compile>
     <Compile Include="Helpers\Session.cs" />
+    <Compile Include="Helpers\ThemeHelper.cs" />
     <Compile Include="Services\DashboardService.cs" />
     <Compile Include="Services\GozetmenService.cs" />
     <Compile Include="Services\LoginService.cs" />
     <Compile Include="Database\DatabaseConnection.cs" />
+    <Compile Include="DbHelper.cs" />
     <Compile Include="FrmGozetmenPanel.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -69,6 +77,60 @@
     <Compile Include="FrmLogin.Designer.cs">
       <DependentUpon>FrmLogin.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmRaporlar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmRaporlar.Designer.cs">
+      <DependentUpon>FrmRaporlar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmSinavIptal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmSinavIptal.Designer.cs">
+      <DependentUpon>FrmSinavIptal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmSinavYonetim.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmSinavYonetim.Designer.cs">
+      <DependentUpon>FrmSinavYonetim.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmTakvim.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmTakvim.Designer.cs">
+      <DependentUpon>FrmTakvim.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UcDashboardHome.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UcDashboardHome.Designer.cs">
+      <DependentUpon>UcDashboardHome.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UcSinavYonetim.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UcSinavYonetim.Designer.cs">
+      <DependentUpon>UcSinavYonetim.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UcTakvim.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UcTakvim.Designer.cs">
+      <DependentUpon>UcTakvim.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UcRaporlar.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UcRaporlar.Designer.cs">
+      <DependentUpon>UcRaporlar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UcTanimlamalar.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UcTanimlamalar.Designer.cs">
+      <DependentUpon>UcTanimlamalar.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FrmDashboard.resx">
@@ -79,6 +141,36 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmLogin.resx">
       <DependentUpon>FrmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmRaporlar.resx">
+      <DependentUpon>FrmRaporlar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmSinavIptal.resx">
+      <DependentUpon>FrmSinavIptal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmSinavYonetim.resx">
+      <DependentUpon>FrmSinavYonetim.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmTakvim.resx">
+      <DependentUpon>FrmTakvim.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmTanimlamalar.resx">
+      <DependentUpon>FrmTanimlamalar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UcDashboardHome.resx">
+      <DependentUpon>UcDashboardHome.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UcSinavYonetim.resx">
+      <DependentUpon>UcSinavYonetim.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UcTakvim.resx">
+      <DependentUpon>UcTakvim.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UcRaporlar.resx">
+      <DependentUpon>UcRaporlar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UcTanimlamalar.resx">
+      <DependentUpon>UcTanimlamalar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
