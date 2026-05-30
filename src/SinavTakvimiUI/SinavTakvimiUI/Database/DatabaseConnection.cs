@@ -10,7 +10,7 @@ namespace SinavTakvimiUI.Database
     public class DatabaseConnection
     {
         private string connectionString =
-        @"Server=DESKTOP-3D472GQ\SQLEXPRESS;
+        @"Server=.\SQLEXPRESS;
         Database=SinavTakvimiOtomasyonuDB;
         Trusted_Connection=True;
         TrustServerCertificate=True";
