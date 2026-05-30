@@ -1,0 +1,27 @@
+USE SinavTakvimiOtomasyonuDB
+GO
+
+CREATE TABLE Personel(
+	PersonelID INT IDENTITY(1,1) PRIMARY KEY,
+	Unvan NVARCHAR(70),
+	Ad NVARCHAR(50),
+	Soyad NVARCHAR(50),
+	BolumID INT NOT NULL,
+
+	CONSTRAINT Personel_Bolumler FOREIGN KEY (BolumID)
+	REFERENCES Bolumler(BolumID)
+);
+
+
+CREATE TABLE Dersler (
+	DersID INT IDENTITY(1,1) PRIMARY KEY,
+	DersKodu NVARCHAR(20) NOT NULL,
+	DersTuru NVARCHAR(20),
+	Ad NVARCHAR(100) NOT NULL,
+	OgrenciSayisi INT NOT NULL,
+	Yariyil INT NOT NULL,
+	BolumID INT NOT NULL
+
+	CONSTRAINT Dersler_Bolumler FOREIGN KEY (BolumID)
+	REFERENCES Bolumler(BolumID)
+);
