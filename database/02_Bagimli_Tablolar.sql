@@ -12,7 +12,6 @@ CREATE TABLE Personel(
 	REFERENCES Bolumler(BolumID)
 );
 
-
 CREATE TABLE Dersler (
 	DersID INT IDENTITY(1,1) PRIMARY KEY,
 	DersKodu NVARCHAR(20) NOT NULL,
@@ -25,3 +24,26 @@ CREATE TABLE Dersler (
 	CONSTRAINT Dersler_Bolumler FOREIGN KEY (BolumID)
 	REFERENCES Bolumler(BolumID)
 );
+
+-- SİSTEM GİRİŞİ İÇİN KULLANICILAR TABLOSU
+CREATE TABLE Kullanicilar (
+    KullaniciID INT IDENTITY(1,1) PRIMARY KEY,
+    PersonelID INT UNIQUE NOT NULL, 
+    KullaniciAdi NVARCHAR(50) UNIQUE NOT NULL, 
+    Sifre NVARCHAR(100) NOT NULL, 
+    Rol NVARCHAR(20) DEFAULT 'Gozetmen', 
+    Durum BIT DEFAULT 1, 
+    
+    CONSTRAINT FK_Kullanicilar_Personel FOREIGN KEY (PersonelID) 
+    REFERENCES Personel(PersonelID)
+);
+GO
+
+-- TEST VERİLERİ (Arayüzde giriş yapmak için 2 adet hesap)
+
+INSERT INTO Kullanicilar (PersonelID, KullaniciAdi, Sifre, Rol)
+VALUES (1, 'admin', 'admin123', 'Yonetici');
+
+INSERT INTO Kullanicilar (PersonelID, KullaniciAdi, Sifre, Rol)
+VALUES (2, 'ahmet_hoca', '1234', 'Gozetmen');
+GO
