@@ -14,7 +14,6 @@ GO
 -- Beklenen: Trigger uyanmalı, kırmızı hata vermeli ve sınavın eklenmesini engellemeli!
 
 PRINT '--- TEST 1 BAŞLIYOR ---';
-
 BEGIN TRY
     INSERT INTO Sinavlar (DersID, Tarih, OturumID) 
     VALUES (1, '2020-01-01', 1);
